@@ -1,0 +1,25 @@
+<div class="app-window" id="PianoApp">
+  <div class="app-header">
+    <span class="app-title">&#127929; Piano</span>
+    <div class="app-controls"><button class="minimize-btn">&ndash;</button><button class="close-btn">&times;</button></div>
+  </div>
+  <div class="app-content">
+    <div class="pi">
+      <div class="pi-bar">
+        <label class="pi-f">Wave
+          <select id="pi-wave">
+            <option value="sine">sine</option>
+            <option value="triangle" selected>triangle</option>
+            <option value="square">square</option>
+            <option value="sawtooth">saw</option>
+          </select>
+        </label>
+        <button id="pi-rec" class="pi-btn">&#9679; Rec</button>
+        <button id="pi-play" class="pi-btn">&#9654; Play</button>
+        <span class="pi-hint">Type: A W S E D F T G Y H U J K</span>
+      </div>
+      <div class="pi-keys" id="pi-keys"></div>
+    </div>
+  </div>
+  <div class="resize-handle"></div>
+</div>

@@ -1,0 +1,13 @@
+#PianoApp .pi { display:flex; flex-direction:column; height:100%; box-sizing:border-box; padding:10px; gap:10px; background:#1b1f27; color:#dfe6ee; font:13px/1.4 system-ui,-apple-system,Segoe UI,sans-serif; }
+#PianoApp .pi-bar { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+#PianoApp .pi-f { display:flex; align-items:center; gap:5px; }
+#PianoApp .pi-f select { background:#2b3240; color:#dfe6ee; border:1px solid #3a4150; border-radius:6px; padding:4px; font:inherit; }
+#PianoApp .pi-btn { background:#2b3240; color:#dfe6ee; border:1px solid #3a4150; border-radius:6px; padding:5px 10px; cursor:pointer; font:inherit; }
+#PianoApp .pi-btn:hover { background:#353d4d; }
+#PianoApp .pi-btn.on { background:#e23d3d; border-color:#e23d3d; color:#fff; }
+#PianoApp .pi-hint { color:#8b95a3; font-size:11px; }
+#PianoApp .pi-keys { position:relative; flex:1; min-height:140px; display:flex; align-items:stretch; background:#0d0f14; border:1px solid #333; border-radius:6px; padding:6px; overflow:hidden; user-select:none; }
+#PianoApp .pi-w { position:relative; flex:1; background:linear-gradient(#fff,#e8e8e8); border:1px solid #bbb; border-radius:0 0 5px 5px; margin:0 1px; cursor:pointer; display:flex; align-items:flex-end; justify-content:center; padding-bottom:6px; color:#444; font-size:10px; }
+#PianoApp .pi-w.down { background:linear-gradient(#cfe0ff,#9fc2ff); }
+#PianoApp .pi-b { position:absolute; top:6px; width:26px; height:58%; background:linear-gradient(#333,#000); border:1px solid #000; border-radius:0 0 4px 4px; cursor:pointer; z-index:2; color:#ccc; font-size:9px; text-align:center; padding-top:4px; box-sizing:border-box; }
+#PianoApp .pi-b.down { background:linear-gradient(#4e8cff,#2b6be0); }
