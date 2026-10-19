@@ -2,6 +2,8 @@
 (function () {
   var keysEl = document.getElementById('pi-keys');
   if (!keysEl) return;
+  var winEl = keysEl.closest('.app-window');
+  function hidden() { return winEl && winEl.style.display === 'none'; }
   var waveEl = document.getElementById('pi-wave');
   var recBtn = document.getElementById('pi-rec');
   var playBtn = document.getElementById('pi-play');
@@ -30,6 +32,7 @@
   function freq(m) { return 440 * Math.pow(2, (m - 69) / 12); }
 
   function noteOn(m) {
+    if (hidden()) return; // don't sound when the window is closed/hidden
     if (active[m]) return;
     var c = ctx();
     var osc = c.createOscillator(), g = c.createGain();
@@ -118,6 +121,12 @@
   };
   playBtn.onclick = function () {
     if (!track.length) return;
-    track.forEach(function (ev) { setTimeout(function () { blip(ev.m, 0.4); }, ev.t); });
+    track.forEach(function (ev) { setTimeout(function () { if (!hidden()) blip(ev.m, 0.4); }, ev.t); });
   };
+
+  // When MyOS closes the window, release any held notes and stop recording.
+  if (winEl) winEl.addEventListener('myos:close', function () {
+    Object.keys(active).forEach(function (m) { noteOff(Number(m)); });
+    if (recording) { recording = false; recBtn.classList.remove('on'); recBtn.textContent = '● Rec'; }
+  });
 })();
